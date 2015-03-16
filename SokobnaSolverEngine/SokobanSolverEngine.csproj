@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2652B971-86B5-4DF5-8664-23F9A4948217}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SokobnaSolverEngine</RootNamespace>
+    <AssemblyName>SokobnaSolverEngine</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Online.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmProcessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcessing.Designer.cs">
+      <DependentUpon>frmProcessing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetting.Designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIClasses\ExportLevelToObjects.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIClasses\VerticalProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIClasses\XMLHandler.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcessing.resx">
+      <DependentUpon>frmProcessing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Levels\bugs\sokogen72.gam" />
+    <None Include="Levels\level1.gam" />
+    <None Include="Levels\microban\microban 100.gam" />
+    <None Include="Levels\microban\microban 146.gam" />
+    <None Include="Levels\microban\microban 147.gam" />
+    <None Include="Levels\microban\microban 152.gam" />
+    <None Include="Levels\microban\microban 154.gam" />
+    <None Include="Levels\microban\microban 3.gam" />
+    <None Include="Levels\microban\microban 60.gam" />
+    <None Include="Levels\microban\microban 61.gam" />
+    <None Include="Levels\microban\microban 62.gam" />
+    <None Include="Levels\microban\microban 64.gam" />
+    <None Include="Levels\microban\microban 65.gam" />
+    <None Include="Levels\microban\microban 66.gam" />
+    <None Include="Levels\microban\microban 70.gam" />
+    <None Include="Levels\microban\microban 71.gam" />
+    <None Include="Levels\microban\microban 72.gam" />
+    <None Include="Levels\microban\microban 74.gam" />
+    <None Include="Levels\microban\microban 75.gam" />
+    <None Include="Levels\microban\microban 76.gam" />
+    <None Include="Levels\microban\microban 77.gam" />
+    <None Include="Levels\microban\microban 78.gam" />
+    <Content Include="Levels\MicroCosmos\level1.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level10.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level11.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level12.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level16.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level17.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level18.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level19.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level20.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level21.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level22.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level23.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level24.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level25.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level27.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level28.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level29.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level3.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level30.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level31.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level32.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level33.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level34.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level35.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level36.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level37.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level38.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level39.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level4.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level40.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level6.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level7.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level8.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\MicroCosmos\level9.gam">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Levels\nabokocosmos\naboko cosom 16.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 17.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 18.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 19.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 2.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 20.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 21.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 22.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 23.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 24.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 25.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 26.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 27.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 28.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 29.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 3.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 30.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 31.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 32.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 33.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 34.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 35.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 36.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 37.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 38.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 39.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 4.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 40.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 5.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 6.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 7.gam" />
+    <None Include="Levels\nabokocosmos\naboko cosom 8.gam" />
+    <None Include="Levels\nabokocosmos\naoboko cosmos 10.gam" />
+    <None Include="Levels\nabokocosmos\naoboko cosmos 11.gam" />
+    <None Include="Levels\nabokocosmos\naoboko cosmos 12.gam" />
+    <None Include="Levels\nabokocosmos\naoboko cosmos 13.gam" />
+    <None Include="Levels\nabokocosmos\naoboko cosmos 14.gam" />
+    <None Include="Levels\nabokocosmos\naoboko cosmos 15.gam" />
+    <None Include="Levels\nabokocosmos\naoboko cosmos 9.gam" />
+    <None Include="Levels\Scoria\scoria 10.gam" />
+    <None Include="Levels\Scoria\scoria 13.gam" />
+    <None Include="Levels\Scoria\scoria 16.gam" />
+    <None Include="Levels\Scoria\scoria 17.gam" />
+    <None Include="Levels\Scoria\scoria 18.gam" />
+    <None Include="Levels\Scoria\scoria 19.gam" />
+    <None Include="Levels\Scoria\scoria 20.gam" />
+    <None Include="Levels\Scoria\scoria 4.gam" />
+    <None Include="Levels\Scoria\scoria 6.gam" />
+    <None Include="Levels\SokoGen\sokogen71.gam" />
+    <None Include="Levels\SokoGen\sokogen72.gam" />
+    <None Include="Levels\SokoGen\sokogen73.gam" />
+    <None Include="Levels\SokoGen\sokogen74.gam" />
+    <None Include="Levels\SokoGen\sokogen75.gam" />
+    <None Include="Levels\SokoGen\sokogen77.gam" />
+    <None Include="Levels\SokoGen\sokogen78.gam" />
+    <None Include="Levels\SokoHard\sok hard 1.gam" />
+    <None Include="Levels\SokoHard\soko hard 2.gam" />
+    <None Include="Levels\SokoHard\soko hard 3.gam" />
+    <None Include="Levels\SoloBan\scattered.gam" />
+    <None Include="Levels\SoloBan\solo ban 3.gam" />
+    <None Include="Levels\SoloBan\solo ban 4gam.gam" />
+    <None Include="Levels\SoloBan\solo ban 5.gam" />
+    <None Include="Levels\SoloBan\solo ban.gam" />
+    <None Include="Levels\SoloBan\The Run.gam" />
+    <None Include="Levels\SoloBan\The Spiral.gam" />
+    <None Include="Levels\SoloBan\which way.gam" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UIClasses\UnitBuilder.cs" />
+    <Compile Include="UIClasses\UnitDisposer.cs" />
+    <Compile Include="UIClasses\UnitMover.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataTypes\DataTypes.csproj">
+      <Project>{5FBF321E-C2E8-4E80-9E66-A8B4A5527F07}</Project>
+      <Name>DataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SokobanSolvingLogic\SokobanSolvingLogic.csproj">
+      <Project>{68AE5DB4-927F-4641-868C-7C667480A323}</Project>
+      <Name>SokobanSolvingLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Box.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxOnTarget.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Carrier.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CarrierOnTarget.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Floor.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\processing.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ss_sokoban.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Stop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Target.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Traget.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Wall.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Online.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

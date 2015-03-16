@@ -1,0 +1,28 @@
+D:\Documents and Settings\walid aly\Desktop\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.dll
+D:\Documents and Settings\walid aly\Desktop\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.pdb
+D:\Documents and Settings\walid aly\Desktop\Sokoban\SokobanSolvingLogic\obj\Debug\ResolveAssemblyReference.cache
+D:\Documents and Settings\walid aly\Desktop\Sokoban\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.dll
+D:\Documents and Settings\walid aly\Desktop\Sokoban\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.pdb
+D:\Documents and Settings\walid aly\Desktop\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.dll
+D:\Documents and Settings\walid aly\Desktop\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.pdb
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.dll
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.pdb
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.dll
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.pdb
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.dll
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.pdb
+E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.dll
+E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.pdb
+E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.dll
+E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.pdb
+E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\ResolveAssemblyReference.cache
+E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.dll
+E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.pdb
+D:\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.dll
+D:\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.pdb
+D:\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.dll
+D:\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.pdb
+D:\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\SokobanSolvingLogic.csprojResolveAssemblyReference.cache
+D:\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.dll
+D:\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.pdb

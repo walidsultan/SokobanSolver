@@ -1,0 +1,20 @@
+D:\Documents and Settings\walid aly\Desktop\Sokoban\DataTypes\bin\Debug\Sokoban.DataTypes.dll
+D:\Documents and Settings\walid aly\Desktop\Sokoban\DataTypes\bin\Debug\Sokoban.DataTypes.pdb
+D:\Documents and Settings\walid aly\Desktop\Sokoban\DataTypes\obj\Debug\ResolveAssemblyReference.cache
+D:\Documents and Settings\walid aly\Desktop\Sokoban\DataTypes\obj\Debug\Sokoban.DataTypes.dll
+D:\Documents and Settings\walid aly\Desktop\Sokoban\DataTypes\obj\Debug\Sokoban.DataTypes.pdb
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\DataTypes\bin\Debug\Sokoban.DataTypes.dll
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\DataTypes\bin\Debug\Sokoban.DataTypes.pdb
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\DataTypes\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\DataTypes\obj\Debug\Sokoban.DataTypes.dll
+C:\Documents and Settings\walid aly\Desktop\Projects\Sokoban\DataTypes\obj\Debug\Sokoban.DataTypes.pdb
+E:\Users\Walid\Desktop\Projects\Sokoban\DataTypes\bin\Debug\Sokoban.DataTypes.dll
+E:\Users\Walid\Desktop\Projects\Sokoban\DataTypes\bin\Debug\Sokoban.DataTypes.pdb
+E:\Users\Walid\Desktop\Projects\Sokoban\DataTypes\obj\Debug\ResolveAssemblyReference.cache
+E:\Users\Walid\Desktop\Projects\Sokoban\DataTypes\obj\Debug\Sokoban.DataTypes.dll
+E:\Users\Walid\Desktop\Projects\Sokoban\DataTypes\obj\Debug\Sokoban.DataTypes.pdb
+D:\Projects\Sokoban\DataTypes\bin\Debug\Sokoban.DataTypes.dll
+D:\Projects\Sokoban\DataTypes\bin\Debug\Sokoban.DataTypes.pdb
+D:\Projects\Sokoban\DataTypes\obj\Debug\DataTypes.csprojResolveAssemblyReference.cache
+D:\Projects\Sokoban\DataTypes\obj\Debug\Sokoban.DataTypes.dll
+D:\Projects\Sokoban\DataTypes\obj\Debug\Sokoban.DataTypes.pdb

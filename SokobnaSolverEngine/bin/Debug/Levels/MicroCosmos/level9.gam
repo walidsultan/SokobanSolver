@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<SavedGame>
+  <Level Id="MICROCOSMOS 09" Width="9" Height="9">
+    <L>    ####</L>
+    <L>#####  #</L>
+    <L># $   $#</L>
+    <L>#  .#. #</L>
+    <L>## ### ##</L>
+    <L> # .#.  #</L>
+    <L> #$ @ $ #</L>
+    <L> #  #####</L>
+    <L> ####</L>
+  </Level>
+</SavedGame>

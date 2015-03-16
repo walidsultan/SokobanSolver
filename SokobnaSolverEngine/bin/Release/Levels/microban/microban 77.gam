@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<SavedGame>
+  <File>C:\Program Files\Sokoban 2.0\Levels\microban.slc</File>
+  <Player>walid</Player>
+  <Nr>76</Nr>
+  <History></History>
+  <Level Id="77" Width="11" Height="7">
+    <L>##########</L>
+    <L># @ .... #</L>
+    <L>#   ####$##</L>
+    <L>## #  $ $ #</L>
+    <L> # $      #</L>
+    <L> #   ######</L>
+    <L> #####</L>
+  </Level>
+</SavedGame>
