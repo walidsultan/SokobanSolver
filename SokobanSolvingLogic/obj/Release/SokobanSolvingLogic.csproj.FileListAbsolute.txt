@@ -12,3 +12,10 @@ E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\bin\Release\Sokoban.
 E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\obj\Release\ResolveAssemblyReference.cache
 E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\obj\Release\Sokoban.SokobanSolvingLogic.dll
 E:\Users\Walid\Desktop\Projects\Sokoban\SokobanSolvingLogic\obj\Release\Sokoban.SokobanSolvingLogic.pdb
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Release\Sokoban.SokobanSolvingLogic.dll
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Release\Sokoban.SokobanSolvingLogic.pdb
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Release\Sokoban.DataTypes.dll
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Release\Sokoban.DataTypes.pdb
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Release\SokobanSolvingLogic.csprojResolveAssemblyReference.cache
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Release\Sokoban.SokobanSolvingLogic.dll
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Release\Sokoban.SokobanSolvingLogic.pdb

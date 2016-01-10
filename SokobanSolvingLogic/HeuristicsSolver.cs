@@ -12,8 +12,6 @@ namespace Sokoban.SokobanSolvingLogic
 
         public event SolvedHandler Solved;
 
-        private static bool _requestStop = false;
-
         public Path Solve(List<SokobanObject> levelObjects,System.Threading.CancellationToken cancellationToken)
         {
             List<Solution> PossibleSolutions = new List<Solution>();
@@ -213,12 +211,5 @@ namespace Sokoban.SokobanSolvingLogic
             AppliedSolution.SolutionPath.Directions.AddRange(ApplyPath.Directions);
             return AppliedSolution;
         }
-
-        public static void RequestStop(bool value)
-        {
-            _requestStop = value;
-        }
-
-
     }
 }

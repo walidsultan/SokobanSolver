@@ -21,8 +21,9 @@ namespace SokobnaSolverEngine
         static int LoopCount = 0;//used for animation
         Path PlayerPath = new Path();//to keep track of player moves
         DateTime StartDate;
-        frmProcessing _frmProcessing = new frmProcessing();
+        frmProcessing _frmProcessing;
        public  VerticalProgressBar ProcessingBar = new VerticalProgressBar();
+        CancellationTokenSource cancellationToken = new CancellationTokenSource();
 
         public frmMain()
         {
@@ -200,7 +201,7 @@ namespace SokobnaSolverEngine
                 Animate.Start();
                
 
-                if (!_frmProcessing.Created ) _frmProcessing = new frmProcessing();
+                if (!_frmProcessing.Created ) _frmProcessing = new frmProcessing(cancellationToken);
                 _frmProcessing.Show(this);
                
              
@@ -223,57 +224,41 @@ namespace SokobnaSolverEngine
 
         private void btnSolve_Click(object sender, EventArgs e)
         {
-            
-            
             if (btnSolve.Text == "Solve")
             {
                 ProcessingBar.Visible = true ;
                 _SolutionPath.Directions.Clear();
-                HeuristicsSolver.RequestStop(false);
                 StartDate = DateTime.Now;
-
 
                Thread Animate = new Thread(AnimateOpacity);
                 Animate.Start();
-                //AnimateOpacity();
 
-                if (!_frmProcessing.Created ) _frmProcessing = new frmProcessing();
+                if (_frmProcessing==null  || !_frmProcessing.Created ) _frmProcessing = new frmProcessing(cancellationToken);
                 _frmProcessing.Show(this);
                 _frmProcessing.FormClosing += new FormClosingEventHandler(_frmProcessing_FormClosing);
-                 
-
-                button1.Enabled = false;
-
 
                 SolvePuzzle();
-
-                //   HeuristicsSolver Solver = new HeuristicsSolver();
-                //Thread SolvingThread = new Thread(Solver.Solve);
-                //Solver.Solved += new HeuristicsSolver.SolvedHandler(Solver_Solved);
-              
-                //SolvingThread.Start((object)ExportLevelToSolvingLogic.GetLevelObjects(this));
-                //SolvingThread.Name ="MyThread";
             }
             else if (btnSolve.Text == "Stop")
             {
-                
-
                 btnSolve.Text = "Solve";
-                button1.Enabled = true;
-                HeuristicsSolver.RequestStop(true  );
+                cancellationToken.Cancel();
                 btnSolve.Visible = false ;
             }
 
             this.Focus();
-
-
         }
 
         public async void SolvePuzzle() {
             HeuristicsSolver solver = new HeuristicsSolver();
-            CancellationToken cancellationToken = new CancellationToken();
-            Path solution = await Task.Run(() => solver.Solve(ExportLevelToSolvingLogic.GetLevelObjects(this), cancellationToken), cancellationToken);
-            Solver_Solved(solver, solution);
+            if (cancellationToken.IsCancellationRequested)
+            {
+                cancellationToken = new CancellationTokenSource();
+                _frmProcessing.SetCancellationToken(cancellationToken);
+            }
+
+            Path solution = await Task.Run(() => solver.Solve(ExportLevelToSolvingLogic.GetLevelObjects(this), cancellationToken.Token), cancellationToken.Token);
+            if (!cancellationToken.IsCancellationRequested)Solver_Solved(solver, solution);
         }
 
         void _frmProcessing_FormClosing(object sender, FormClosingEventArgs e)
@@ -465,7 +450,7 @@ namespace SokobnaSolverEngine
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            HeuristicsSolver.RequestStop(true );
+            cancellationToken.Cancel();
         }
 
         private void GenerateMenu()
@@ -509,7 +494,7 @@ namespace SokobnaSolverEngine
         }
         private void Exit_clicked(object sender, EventArgs e)
         {
-            HeuristicsSolver.RequestStop(true);
+            cancellationToken.Cancel();
             this.Close();
         }
         private void Reload_clicked(object sender, EventArgs e)

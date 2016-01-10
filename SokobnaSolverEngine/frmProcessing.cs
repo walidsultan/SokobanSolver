@@ -7,12 +7,16 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Sokoban.SokobanSolvingLogic;
+using System.Threading;
+
 namespace SokobnaSolverEngine
 {
     public partial class frmProcessing : Form
     {
-        public frmProcessing()
+        CancellationTokenSource _CancellationToken;
+        public frmProcessing(CancellationTokenSource cancellationToken)
         {
+            this._CancellationToken = cancellationToken;
             InitializeComponent();
         }
 
@@ -53,9 +57,13 @@ namespace SokobnaSolverEngine
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {//Stop Processing thread
-            HeuristicsSolver.RequestStop(true);
+            this._CancellationToken.Cancel();
             this.Close();
         }
-   
+
+        public void SetCancellationToken(CancellationTokenSource cancellationToken) {
+            this._CancellationToken = cancellationToken;
+        }
+
     }
 }

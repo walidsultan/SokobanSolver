@@ -8,3 +8,7 @@ E:\Users\Walid\Desktop\Projects\Sokoban\DataTypes\bin\Release\Sokoban.DataTypes.
 E:\Users\Walid\Desktop\Projects\Sokoban\DataTypes\obj\Release\ResolveAssemblyReference.cache
 E:\Users\Walid\Desktop\Projects\Sokoban\DataTypes\obj\Release\Sokoban.DataTypes.dll
 E:\Users\Walid\Desktop\Projects\Sokoban\DataTypes\obj\Release\Sokoban.DataTypes.pdb
+C:\Main\Projects\SokobanSolver\DataTypes\bin\Release\Sokoban.DataTypes.dll
+C:\Main\Projects\SokobanSolver\DataTypes\bin\Release\Sokoban.DataTypes.pdb
+C:\Main\Projects\SokobanSolver\DataTypes\obj\Release\Sokoban.DataTypes.dll
+C:\Main\Projects\SokobanSolver\DataTypes\obj\Release\Sokoban.DataTypes.pdb
