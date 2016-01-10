@@ -26,3 +26,10 @@ D:\Projects\Sokoban\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.pdb
 D:\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\SokobanSolvingLogic.csprojResolveAssemblyReference.cache
 D:\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.dll
 D:\Projects\Sokoban\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.pdb
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.dll
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.pdb
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.dll
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.pdb
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\SokobanSolvingLogic.csprojResolveAssemblyReference.cache
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.dll
+C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.pdb

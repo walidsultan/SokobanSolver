@@ -12,16 +12,13 @@ namespace Sokoban.SokobanSolvingLogic
 
         public event SolvedHandler Solved;
 
-        private static  bool _requestStop=false  ;
+        private static bool _requestStop = false;
 
-
-        public void Solve(object AllObjectsParametrized)
+        public Path Solve(List<SokobanObject> levelObjects,System.Threading.CancellationToken cancellationToken)
         {
-            List<SokobanObject> AllObjects = (List<SokobanObject>)AllObjectsParametrized;
             List<Solution> PossibleSolutions = new List<Solution>();
-            List<Path> PossiblePaths = CarrierPathTracker.GetPossiblePaths(AllObjects);
+            List<Path> PossiblePaths = CarrierPathTracker.GetPossiblePaths(levelObjects);
             SolutionsTracker AssociatedSolutionsTracker = new SolutionsTracker();
-
 
             //Initialize Solution Tracker
             AssociatedSolutionsTracker.InitializeSolutions();
@@ -30,16 +27,12 @@ namespace Sokoban.SokobanSolvingLogic
 
             foreach (Path possiblePath in PossiblePaths)
             {
-                Solution PossibleSolution = ApplySolution(possiblePath, AllObjects,new Path ());
-                if (SolutionStatus. IsLevelSolved(PossibleSolution.DerivedObjects))
+                Solution PossibleSolution = ApplySolution(possiblePath, levelObjects, new Path());
+                if (SolutionStatus.IsLevelSolved(PossibleSolution.DerivedObjects))
                 {
-
-                    SolutionInfoEventArgs SolutionInformation = new SolutionInfoEventArgs(PossibleSolution.SolutionPath);
-                    SolutionInformation.SolutionPath.valid = true;
-                    OnSolved(new HeuristicsSolver(), SolutionInformation);
-                    return;
                     //Level Solved 
-
+                    PossibleSolution.SolutionPath.valid = true;
+                    return PossibleSolution.SolutionPath;
                 }
                 if (!SolutionStatus.IsSolutionStuck(PossibleSolution) && !AssociatedSolutionsTracker.IsSolutionRepeated(PossibleSolution))
                 {
@@ -51,25 +44,22 @@ namespace Sokoban.SokobanSolvingLogic
             PerformanceDetails.Pushes++;
 
             List<Solution> RecursiveSolutions = new List<Solution>();
-            while (_requestStop == false)
+            while (!cancellationToken.IsCancellationRequested)
             {
                 PerformanceDetails.Pushes++;
                 foreach (Solution PossibleSolution in PossibleSolutions)
                 {
                     PerformanceDetails.CurrentSolution = PossibleSolutions.IndexOf(PossibleSolution);
-                    if (_requestStop == true) break;
-                    PossiblePaths = CarrierPathTracker. GetPossiblePaths(PossibleSolution.DerivedObjects);
+                    if (cancellationToken.IsCancellationRequested) break;
+                    PossiblePaths = CarrierPathTracker.GetPossiblePaths(PossibleSolution.DerivedObjects);
                     foreach (Path possiblePath in PossiblePaths)
                     {
                         Solution _PossibleSolution = ApplySolution(possiblePath, PossibleSolution.DerivedObjects, PossibleSolution.SolutionPath);
                         if (SolutionStatus.IsLevelSolved(_PossibleSolution.DerivedObjects))
                         {
-
-                            SolutionInfoEventArgs SolutionInformation = new SolutionInfoEventArgs(_PossibleSolution.SolutionPath);
-                            SolutionInformation.SolutionPath.valid = true;
-                            OnSolved(new HeuristicsSolver(), SolutionInformation);
-                            return;
                             //Level Solved 
+                            _PossibleSolution.SolutionPath.valid = true;
+                            return _PossibleSolution.SolutionPath;
                         }
 
                         if (!SolutionStatus.IsSolutionStuck(_PossibleSolution))
@@ -91,17 +81,14 @@ namespace Sokoban.SokobanSolvingLogic
                 PerformanceDetails.PossibleSolutions = PossibleSolutions.Count;
                 if (RecursiveSolutions.Count == 0)
                 {
-                    SolutionInfoEventArgs SolutionInformation = new SolutionInfoEventArgs(new Path());
-                    OnSolved(new HeuristicsSolver(), SolutionInformation);
-                    return;
                     //Level failed ;
+                    return new Path() { valid = false };
                 }
                 RecursiveSolutions.Clear();
-             
+
             }
 
-            System.Threading.Thread.CurrentThread.Abort();
-
+              return new Path() { valid = false };
         }
 
         protected void OnSolved(object unInformedSolver, SolutionInfoEventArgs SolutionInformation)
@@ -112,7 +99,7 @@ namespace Sokoban.SokobanSolvingLogic
             }
         }
 
-        public  static Solution ApplySolution(Path ApplyPath, List<SokobanObject> AllObjects, Path RootPath)
+        public static Solution ApplySolution(Path ApplyPath, List<SokobanObject> AllObjects, Path RootPath)
         {
             List<SokobanObject> DerivedObjects = new List<SokobanObject>();
             foreach (SokobanObject _NativeObject in AllObjects)
@@ -120,7 +107,7 @@ namespace Sokoban.SokobanSolvingLogic
                 DerivedObjects.Add((SokobanObject)_NativeObject.Clone());
             }
 
-            SokobanObject CarrierObject = DerivedObjects.Find(delegate(SokobanObject obj) { return (obj.Type == UnitType.Carrier || obj.Type == UnitType.CarrierOnTarget); });
+            SokobanObject CarrierObject = DerivedObjects.Find(delegate (SokobanObject obj) { return (obj.Type == UnitType.Carrier || obj.Type == UnitType.CarrierOnTarget); });
             //Move Carrier to destination
             PositionIndex TargetPosition = new PositionIndex(CarrierObject.Position);
             foreach (Direction _direction in ApplyPath.Directions)
@@ -149,7 +136,7 @@ namespace Sokoban.SokobanSolvingLogic
             if (BoxObject.Type != UnitType.Box && BoxObject.Type != UnitType.BoxOnTarget) return new Solution(); //this line for test stuck procedure
             PositionIndex PushIndex = new PositionIndex(TargetPosition);
             //push box
-            switch (ApplyPath.Directions.FindLast(delegate(Direction direction) { return true; }))
+            switch (ApplyPath.Directions.FindLast(delegate (Direction direction) { return true; }))
             {
                 case Direction.Up:
                     PushIndex.yIndex--;
@@ -218,7 +205,7 @@ namespace Sokoban.SokobanSolvingLogic
             {
                 new Exception("Abnoraml logic Flow");
             }
-          
+
 
             Solution AppliedSolution = new Solution();
             AppliedSolution.DerivedObjects = DerivedObjects;
@@ -227,7 +214,7 @@ namespace Sokoban.SokobanSolvingLogic
             return AppliedSolution;
         }
 
-        public  static void  RequestStop(bool value)
+        public static void RequestStop(bool value)
         {
             _requestStop = value;
         }

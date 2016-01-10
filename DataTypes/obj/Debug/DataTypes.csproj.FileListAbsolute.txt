@@ -18,3 +18,7 @@ D:\Projects\Sokoban\DataTypes\bin\Debug\Sokoban.DataTypes.pdb
 D:\Projects\Sokoban\DataTypes\obj\Debug\DataTypes.csprojResolveAssemblyReference.cache
 D:\Projects\Sokoban\DataTypes\obj\Debug\Sokoban.DataTypes.dll
 D:\Projects\Sokoban\DataTypes\obj\Debug\Sokoban.DataTypes.pdb
+C:\Main\Projects\SokobanSolver\DataTypes\bin\Debug\Sokoban.DataTypes.dll
+C:\Main\Projects\SokobanSolver\DataTypes\bin\Debug\Sokoban.DataTypes.pdb
+C:\Main\Projects\SokobanSolver\DataTypes\obj\Debug\Sokoban.DataTypes.dll
+C:\Main\Projects\SokobanSolver\DataTypes\obj\Debug\Sokoban.DataTypes.pdb

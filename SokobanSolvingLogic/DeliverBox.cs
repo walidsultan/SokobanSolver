@@ -115,10 +115,10 @@ namespace Sokoban.SokobanSolvingLogic
                StartTime = DateTime.Now;
 
                HeuristicsSolver Solver = new HeuristicsSolver();
-               Thread BoxDeleveringThread = new Thread(Solver.Solve);
-               BoxDeleveringThread.Start(CopyOfAllObjects);
-               Solver.Solved += new HeuristicsSolver.SolvedHandler(Solver_Solved);
-               BoxDeleveringThread.Join();
+             //  Thread BoxDeleveringThread = new Thread(Solver.Solve);
+               //BoxDeleveringThread.Start(CopyOfAllObjects);
+               //Solver.Solved += new HeuristicsSolver.SolvedHandler(Solver_Solved);
+               //BoxDeleveringThread.Join();
 
                PerformanceDetails.IsDirectPath = false;
                PerformanceDetails.PathTime = DateTime.Now.Subtract(StartTime).Milliseconds + DateTime.Now.Subtract(StartTime).Seconds * 1000;

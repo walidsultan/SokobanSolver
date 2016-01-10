@@ -1,11 +1,15 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SokobanSolverEngine", "SokobnaSolverEngine\SokobanSolverEngine.csproj", "{2652B971-86B5-4DF5-8664-23F9A4948217}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SokobanSolvingLogic", "SokobanSolvingLogic\SokobanSolvingLogic.csproj", "{68AE5DB4-927F-4641-868C-7C667480A323}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataTypes\DataTypes.csproj", "{5FBF321E-C2E8-4E80-9E66-A8B4A5527F07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SokobanSolverWebApi", "SokobanSolverWebApi\SokobanSolverWebApi.csproj", "{2BEBEDBC-19B3-46A1-B1D1-CB3CF43C0AEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{5FBF321E-C2E8-4E80-9E66-A8B4A5527F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FBF321E-C2E8-4E80-9E66-A8B4A5527F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FBF321E-C2E8-4E80-9E66-A8B4A5527F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BEBEDBC-19B3-46A1-B1D1-CB3CF43C0AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BEBEDBC-19B3-46A1-B1D1-CB3CF43C0AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BEBEDBC-19B3-46A1-B1D1-CB3CF43C0AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BEBEDBC-19B3-46A1-B1D1-CB3CF43C0AEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

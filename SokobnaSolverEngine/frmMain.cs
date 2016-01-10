@@ -10,6 +10,8 @@ using Sokoban.DataTypes;
 using Sokoban.SokobanSolvingLogic;
 using System.Threading;
 using System.Configuration;
+using System.Threading.Tasks;
+
 namespace SokobnaSolverEngine
 {
     public partial class frmMain:Form 
@@ -206,7 +208,7 @@ namespace SokobnaSolverEngine
            
              Thread SolvingThread = new Thread(Solver.Solve);
 
-             Solver.Solved += new DirectPathSolver.SolvedHandler(Solver_Solved);
+           //  Solver.Solved += new DirectPathSolver.SolvedHandler(Solver_Solved);
               
                 SolvingThread.Start((object)ExportLevelToSolvingLogic.GetLevelObjects(this));
                 SolvingThread.Name ="MyThread";
@@ -241,13 +243,16 @@ namespace SokobnaSolverEngine
                  
 
                 button1.Enabled = false;
-                
-                HeuristicsSolver Solver = new HeuristicsSolver();
-                Thread SolvingThread = new Thread(Solver.Solve);
-                Solver.Solved += new HeuristicsSolver.SolvedHandler(Solver_Solved);
+
+
+                SolvePuzzle();
+
+                //   HeuristicsSolver Solver = new HeuristicsSolver();
+                //Thread SolvingThread = new Thread(Solver.Solve);
+                //Solver.Solved += new HeuristicsSolver.SolvedHandler(Solver_Solved);
               
-                SolvingThread.Start((object)ExportLevelToSolvingLogic.GetLevelObjects(this));
-                SolvingThread.Name ="MyThread";
+                //SolvingThread.Start((object)ExportLevelToSolvingLogic.GetLevelObjects(this));
+                //SolvingThread.Name ="MyThread";
             }
             else if (btnSolve.Text == "Stop")
             {
@@ -264,6 +269,13 @@ namespace SokobnaSolverEngine
 
         }
 
+        public async void SolvePuzzle() {
+            HeuristicsSolver solver = new HeuristicsSolver();
+            CancellationToken cancellationToken = new CancellationToken();
+            Path solution = await Task.Run(() => solver.Solve(ExportLevelToSolvingLogic.GetLevelObjects(this), cancellationToken), cancellationToken);
+            Solver_Solved(solver, solution);
+        }
+
         void _frmProcessing_FormClosing(object sender, FormClosingEventArgs e)
         {
             ProcessingBar.Visible = false;
@@ -271,11 +283,11 @@ namespace SokobnaSolverEngine
 
 
 
-        void Solver_Solved(object unInformedSolver, SolutionInfoEventArgs SolutionInformation)
+        void Solver_Solved(object unInformedSolver, Path solution)
         {
 
             ProcessingBar.BeginInvoke(new EventHandler(delegate { ProcessingBar.Visible = false; }));
-            if (SolutionInformation.SolutionPath.valid == false)
+            if (solution.valid == false)
             {
                 _frmProcessing.BeginInvoke(new EventHandler(delegate { _frmProcessing.Close(); }));
                 MessageBox.Show("Unsolvable level" , "Sokoban Solver");
@@ -293,8 +305,8 @@ namespace SokobnaSolverEngine
                 this.BeginInvoke(new EventHandler(delegate { this.Opacity = .99; }));
                 
                
-                _SolutionPath = new Path(SolutionInformation.SolutionPath);
-                _SolutionPath.valid = SolutionInformation.SolutionPath.valid;
+                _SolutionPath = new Path(solution);
+                _SolutionPath.valid = solution.valid;
             }
             
        }
