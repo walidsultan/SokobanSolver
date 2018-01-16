@@ -12,3 +12,4 @@ C:\Main\Projects\SokobanSolver\DataTypes\bin\Release\Sokoban.DataTypes.dll
 C:\Main\Projects\SokobanSolver\DataTypes\bin\Release\Sokoban.DataTypes.pdb
 C:\Main\Projects\SokobanSolver\DataTypes\obj\Release\Sokoban.DataTypes.dll
 C:\Main\Projects\SokobanSolver\DataTypes\obj\Release\Sokoban.DataTypes.pdb
+C:\Main\Projects\SokobanSolver\DataTypes\obj\Release\DataTypes.csprojResolveAssemblyReference.cache
