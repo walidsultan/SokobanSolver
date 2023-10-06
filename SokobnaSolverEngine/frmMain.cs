@@ -11,18 +11,19 @@ using Sokoban.SokobanSolvingLogic;
 using System.Threading;
 using System.Configuration;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SokobnaSolverEngine
 {
-    public partial class frmMain:Form 
+    public partial class frmMain : Form
     {
         Coordinates CurrentPosition = new Coordinates();
-        static  Path _SolutionPath = new Path();//used for animation
+        static Path _SolutionPath = new Path();//used for animation
         static int LoopCount = 0;//used for animation
         Path PlayerPath = new Path();//to keep track of player moves
         DateTime StartDate;
         frmProcessing _frmProcessing;
-       public  VerticalProgressBar ProcessingBar = new VerticalProgressBar();
+        public VerticalProgressBar ProcessingBar = new VerticalProgressBar();
         CancellationTokenSource cancellationToken = new CancellationTokenSource();
 
         public frmMain()
@@ -47,13 +48,13 @@ namespace SokobnaSolverEngine
             InitializeComponent();
 
             this.Show();
-         //   testInterface();
-          // TestStuckProcedure();
+            //   testInterface();
+            // TestStuckProcedure();
             UnitBuilder.LoadImages();
             pnlStatistics.Left = this.Width - pnlStatistics.Width;
             GenerateMenu();
             LoadSetting();
-            lblMsg.Text = XMLHandler.LoadLevel(this, Settings.StartupLevel );
+            lblMsg.Text = XMLHandler.LoadLevel(this, Settings.StartupLevel);
             CurrentPosition = XMLHandler.GetCarrierCoordinates(this);
             this.Opacity = .99;
 
@@ -63,7 +64,7 @@ namespace SokobnaSolverEngine
 
         }
 
-        public  static  Path  SolutionPath
+        public static Path SolutionPath
         {
             get
             {
@@ -145,13 +146,13 @@ namespace SokobnaSolverEngine
 
         }
 
-        public   void LoadSetting()
+        public void LoadSetting()
         {
-          Settings.Speed  =int.Parse( ConfigurationSettings.AppSettings["Speed"]);
-          Settings.ZoomFactor = int.Parse(ConfigurationSettings.AppSettings["ZoomFactor"]);
-          Settings.StartupLevel = ConfigurationSettings.AppSettings["StartupLevel"];
-          Settings.DirectPathMaxTargets =int.Parse( ConfigurationSettings.AppSettings["DirectPathMaxTargets"]);
-          tAnimate.Interval = Settings.Speed;
+            Settings.Speed = int.Parse(ConfigurationSettings.AppSettings["Speed"]);
+            Settings.ZoomFactor = int.Parse(ConfigurationSettings.AppSettings["ZoomFactor"]);
+            Settings.StartupLevel = ConfigurationSettings.AppSettings["StartupLevel"];
+            Settings.DirectPathMaxTargets = int.Parse(ConfigurationSettings.AppSettings["DirectPathMaxTargets"]);
+            tAnimate.Interval = Settings.Speed;
         }
 
         private void LoadLevel_Click(object sender, EventArgs e)
@@ -173,12 +174,12 @@ namespace SokobnaSolverEngine
 
 
 
-      
+
 
         private void lblKeyBoardhandler_TextChanged(object sender, EventArgs e)
         {
 
-           
+
 
         }
 
@@ -191,30 +192,30 @@ namespace SokobnaSolverEngine
 
         private void btnDirectSolve_Click(object sender, EventArgs e)
         {
-         
-                _SolutionPath.Directions.Clear();
-       
-                StartDate = DateTime.Now;
+
+            _SolutionPath.Directions.Clear();
+
+            StartDate = DateTime.Now;
 
 
-               Thread Animate = new Thread(AnimateOpacity);
-                Animate.Start();
-               
+            Thread Animate = new Thread(AnimateOpacity);
+            Animate.Start();
 
-                if (!_frmProcessing.Created ) _frmProcessing = new frmProcessing(cancellationToken);
-                _frmProcessing.Show(this);
-               
-             
-            DirectPathSolver Solver =new DirectPathSolver();
-           
-             Thread SolvingThread = new Thread(Solver.Solve);
 
-           //  Solver.Solved += new DirectPathSolver.SolvedHandler(Solver_Solved);
-              
-                SolvingThread.Start((object)ExportLevelToSolvingLogic.GetLevelObjects(this));
-                SolvingThread.Name ="MyThread";
-            
-        
+            if (!_frmProcessing.Created) _frmProcessing = new frmProcessing(cancellationToken);
+            _frmProcessing.Show(this);
+
+
+            DirectPathSolver Solver = new DirectPathSolver();
+
+            Thread SolvingThread = new Thread(Solver.Solve);
+
+            //  Solver.Solved += new DirectPathSolver.SolvedHandler(Solver_Solved);
+
+            SolvingThread.Start((object)ExportLevelToSolvingLogic.GetLevelObjects(this));
+            SolvingThread.Name = "MyThread";
+
+
 
             this.Focus();
 
@@ -226,14 +227,14 @@ namespace SokobnaSolverEngine
         {
             if (btnSolve.Text == "Solve")
             {
-                ProcessingBar.Visible = true ;
+                ProcessingBar.Visible = true;
                 _SolutionPath.Directions.Clear();
                 StartDate = DateTime.Now;
 
-               Thread Animate = new Thread(AnimateOpacity);
+                Thread Animate = new Thread(AnimateOpacity);
                 Animate.Start();
 
-                if (_frmProcessing==null  || !_frmProcessing.Created ) _frmProcessing = new frmProcessing(cancellationToken);
+                if (_frmProcessing == null || !_frmProcessing.Created) _frmProcessing = new frmProcessing(cancellationToken);
                 _frmProcessing.Show(this);
                 _frmProcessing.FormClosing += new FormClosingEventHandler(_frmProcessing_FormClosing);
 
@@ -243,13 +244,14 @@ namespace SokobnaSolverEngine
             {
                 btnSolve.Text = "Solve";
                 cancellationToken.Cancel();
-                btnSolve.Visible = false ;
+                btnSolve.Visible = false;
             }
 
             this.Focus();
         }
 
-        public async void SolvePuzzle() {
+        public async void SolvePuzzle()
+        {
             HeuristicsSolver solver = new HeuristicsSolver();
             if (cancellationToken.IsCancellationRequested)
             {
@@ -258,7 +260,7 @@ namespace SokobnaSolverEngine
             }
 
             Path solution = await Task.Run(() => solver.Solve(ExportLevelToSolvingLogic.GetLevelObjects(this), cancellationToken.Token), cancellationToken.Token);
-            if (!cancellationToken.IsCancellationRequested)Solver_Solved(solver, solution);
+            if (!cancellationToken.IsCancellationRequested) Solver_Solved(solver, solution);
         }
 
         void _frmProcessing_FormClosing(object sender, FormClosingEventArgs e)
@@ -275,9 +277,9 @@ namespace SokobnaSolverEngine
             if (solution.valid == false)
             {
                 _frmProcessing.BeginInvoke(new EventHandler(delegate { _frmProcessing.Close(); }));
-                MessageBox.Show("Unsolvable level" , "Sokoban Solver");
+                MessageBox.Show("Unsolvable level", "Sokoban Solver");
                 this.BeginInvoke(new EventHandler(delegate { this.Opacity = .99; }));
-              
+
 
                 _SolutionPath.valid = true;
             }
@@ -286,15 +288,15 @@ namespace SokobnaSolverEngine
                 DateTime SolvedDate = DateTime.Now;
                 TimeSpan TimeTaken = SolvedDate.Subtract(StartDate);
                 _frmProcessing.BeginInvoke(new EventHandler(delegate { _frmProcessing.Close(); }));
-                MessageBox.Show( "Level Solved successfully, Time Taken = " + (TimeTaken.Seconds + TimeTaken.Minutes * 60 + Math.Round((decimal)TimeTaken.Milliseconds / 1000, 1)) + " s.", "Sokoban Solver",MessageBoxButtons.OK );
+                MessageBox.Show("Level Solved successfully, Time Taken = " + (TimeTaken.Seconds + TimeTaken.Minutes * 60 + Math.Round((decimal)TimeTaken.Milliseconds / 1000, 1)) + " s.", "Sokoban Solver", MessageBoxButtons.OK);
                 this.BeginInvoke(new EventHandler(delegate { this.Opacity = .99; }));
-                
-               
+
+
                 _SolutionPath = new Path(solution);
                 _SolutionPath.valid = solution.valid;
             }
-            
-       }
+
+        }
 
 
 
@@ -304,7 +306,7 @@ namespace SokobnaSolverEngine
             lblRecursiveSolution.Text = PerformanceDetails.RecursiveSolutions.ToString();
             lblStuckSolutions.Text = PerformanceDetails.StuckSolutions.ToString();
             lblIsDirectPath.Text = PerformanceDetails.IsDirectPath.ToString();
-            lblPathTime.Text  = PerformanceDetails.PathTime.ToString();
+            lblPathTime.Text = PerformanceDetails.PathTime.ToString();
             lblPushes.Text = PerformanceDetails.Pushes.ToString();
             lblPossibleSolutions.Text = PerformanceDetails.PossibleSolutions.ToString();
             lblCurrentSolution.Text = PerformanceDetails.CurrentSolution.ToString();
@@ -312,10 +314,10 @@ namespace SokobnaSolverEngine
             ProcessingBar.Value = PerformanceDetails.CurrentSolution;
             if (PerformanceDetails.CurrentSolution > 0)
             {
-                float  ConvergenceRatio = PerformanceDetails.RecursiveSolutions / PerformanceDetails.CurrentSolution;
+                float ConvergenceRatio = PerformanceDetails.RecursiveSolutions / PerformanceDetails.CurrentSolution;
                 if (ConvergenceRatio > 1.1)
                 {
-                    ProcessingBar.Color  = Color.Red;
+                    ProcessingBar.Color = Color.Red;
                 }
                 else if (ConvergenceRatio > .9 && ConvergenceRatio < 1.1)
                 {
@@ -387,7 +389,7 @@ namespace SokobnaSolverEngine
 
 
 
-        private bool Test(string  LevelPath,string Solution)
+        private bool Test(string LevelPath, string Solution)
         {
             XMLHandler.LoadLevel(this, LevelPath);
             List<SokobanObject> AllObjects = ExportLevelToSolvingLogic.GetLevelObjects(this);
@@ -434,13 +436,13 @@ namespace SokobnaSolverEngine
             return true;//stuck procedure is ok
         }
 
-        private void  TestStuckProcedure()
+        private void TestStuckProcedure()
         {
             string strPath = "dllldRddrrUULrddlluUrrddrddllUdrruuluullddRRuuluurDDDuurrddLDLUUdrruulLdllddRddrrUUddlluuluurrurrddLdddlluuRlluurrurrddlDuruullulDrrrddldllluuluRdddrrruruulldLruulDlDurrdLurrrddldlUUdrruulLdlUlldRurrdddllUdrddrrUUluuurrddLdlU";
             Test("Test Levels\\Test1.gam", strPath);
 
             string strPath2 = "RlddRdrruLuUUruulDDDlluuRlddrruruulDllddddLdlluRuuuuRRddLruulldDrrddLdlluRUUrrddLdlUrrRdrruLLLuurrDullddrdrruLuuUruulDDDlluuRlddrruruulD";
-            Test("Test Levels\\Test2.gam", strPath2); 
+            Test("Test Levels\\Test2.gam", strPath2);
         }
 
         private void btnStop_Click(object sender, EventArgs e)
@@ -455,24 +457,26 @@ namespace SokobnaSolverEngine
 
         private void GenerateMenu()
         {
-            MainMenu menu = new MainMenu();
-            MenuItem File = menu.MenuItems.Add("&File");
-            File.MenuItems.Add(new MenuItem("&Open",new EventHandler(LoadLevel_Click) ));
-            File.MenuItems.Add(new MenuItem("&Reload Level",new EventHandler(Reload_clicked)));
-            File.MenuItems.Add(new MenuItem("-"));
-            File.MenuItems.Add(new MenuItem("&Exit", new EventHandler(Exit_clicked)));
-            MenuItem Solve = menu.MenuItems.Add("&Solver");
-            Solve.MenuItems.Add(new MenuItem("&Solve",new EventHandler(btnSolve_Click)));
-            Solve.MenuItems.Add(new MenuItem("&DirectSolve", new EventHandler(btnDirectSolve_Click)));
-            Solve.MenuItems.Add(new MenuItem("&Trace"));
-            MenuItem Tools = menu.MenuItems.Add("&Tools");
-            Tools.MenuItems.Add(new MenuItem("&Options", new EventHandler(btnOptions_Click)));
-            MenuItem About = menu.MenuItems.Add("&Help");
-            About.MenuItems.Add(new MenuItem("&Sokoban Help", new EventHandler(btnHelp_Click)));
-            About.MenuItems.Add(new MenuItem("-"));
-            About.MenuItems.Add(new MenuItem("&About"));
+            ToolStripMenuItem file = new ToolStripMenuItem("&File");
+            this.Menu.Items.Add(file);
+            file.DropDownItems.Add(new ToolStripMenuItem("&Open", null, new EventHandler(LoadLevel_Click)));
+            file.DropDownItems.Add(new ToolStripMenuItem("&Reload Level", null, new EventHandler(Reload_clicked)));
+            file.DropDownItems.Add(new ToolStripMenuItem("-"));
+            file.DropDownItems.Add(new ToolStripMenuItem("&Exit", null, new EventHandler(Exit_clicked)));
+            ToolStripMenuItem solve = new ToolStripMenuItem("&Solver");
+            this.Menu.Items.Add(solve);
+            solve.DropDownItems.Add(new ToolStripMenuItem("&Solve", null, new EventHandler(btnSolve_Click)));
+            solve.DropDownItems.Add(new ToolStripMenuItem("&DirectSolve", null, new EventHandler(btnDirectSolve_Click)));
+            solve.DropDownItems.Add(new ToolStripMenuItem("&Trace"));
+            ToolStripMenuItem tools = new ToolStripMenuItem("&Tools");
+            this.Menu.Items.Add(tools);
+            tools.DropDownItems.Add(new ToolStripMenuItem("&Options", null, new EventHandler(btnOptions_Click)));
+            ToolStripMenuItem about = new ToolStripMenuItem("&Help");
+            this.Menu.Items.Add(about);
+            about.DropDownItems.Add(new ToolStripMenuItem("&Sokoban Help", null, new EventHandler(btnHelp_Click)));
+            about.DropDownItems.Add(new ToolStripMenuItem("-"));
+            about.DropDownItems.Add(new ToolStripMenuItem("&About"));
 
-            this.Menu = menu;
         }
 
         private void btnHelp_Click(object sender, EventArgs e)
@@ -506,7 +510,7 @@ namespace SokobnaSolverEngine
             }
             else
             {
-                lblMsg.Text = XMLHandler.LoadLevel(this, Settings.StartupLevel );
+                lblMsg.Text = XMLHandler.LoadLevel(this, Settings.StartupLevel);
             }
 
 
@@ -564,19 +568,19 @@ namespace SokobnaSolverEngine
 
                     break;
 
-                case Keys.S :
+                case Keys.S:
                     btnSolve_Click(this, e);
-                    
+
 
                     break;
                 case Keys.D:
                     btnDirectSolve_Click(this, e);
-                        break;
+                    break;
                 case Keys.Back:
 
                     if (PlayerPath.Directions.Count > 0)
                     {
-                        Direction BackDirection = UnitMover.GetoppositeDirection(PlayerPath.Directions.FindLast (delegate (Direction direction) {return true ;}));
+                        Direction BackDirection = UnitMover.GetoppositeDirection(PlayerPath.Directions.FindLast(delegate (Direction direction) { return true; }));
                         if (UnitMover.MoveCarrier(this, CurrentPosition, BackDirection))
                         {
 
@@ -610,7 +614,7 @@ namespace SokobnaSolverEngine
 
         }
 
-     
+
 
         private void AnimateOpacity()
         {
@@ -640,7 +644,7 @@ namespace SokobnaSolverEngine
             //}
         }
 
-        
+
 
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -663,10 +667,10 @@ namespace SokobnaSolverEngine
 
         }
 
-      
- 
 
-      
+
+
+
 
     }
 }

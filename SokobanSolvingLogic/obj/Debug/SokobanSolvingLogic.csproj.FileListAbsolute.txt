@@ -33,3 +33,12 @@ C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.p
 C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\SokobanSolvingLogic.csprojResolveAssemblyReference.cache
 C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.dll
 C:\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.pdb
+D:\Laptop\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.dll
+D:\Laptop\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Debug\Sokoban.SokobanSolvingLogic.pdb
+D:\Laptop\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.dll
+D:\Laptop\Main\Projects\SokobanSolver\SokobanSolvingLogic\bin\Debug\Sokoban.DataTypes.pdb
+D:\Laptop\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\SokobanSolvingLogic.csproj.AssemblyReference.cache
+D:\Laptop\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\SokobanSolvingLogic.csproj.CoreCompileInputs.cache
+D:\Laptop\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\SokobanSolvingLogic.csproj.CopyComplete
+D:\Laptop\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.dll
+D:\Laptop\Main\Projects\SokobanSolver\SokobanSolvingLogic\obj\Debug\Sokoban.SokobanSolvingLogic.pdb

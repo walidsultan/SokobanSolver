@@ -22,3 +22,9 @@ C:\Main\Projects\SokobanSolver\DataTypes\bin\Debug\Sokoban.DataTypes.dll
 C:\Main\Projects\SokobanSolver\DataTypes\bin\Debug\Sokoban.DataTypes.pdb
 C:\Main\Projects\SokobanSolver\DataTypes\obj\Debug\Sokoban.DataTypes.dll
 C:\Main\Projects\SokobanSolver\DataTypes\obj\Debug\Sokoban.DataTypes.pdb
+D:\Laptop\Main\Projects\SokobanSolver\DataTypes\bin\Debug\Sokoban.DataTypes.dll
+D:\Laptop\Main\Projects\SokobanSolver\DataTypes\bin\Debug\Sokoban.DataTypes.pdb
+D:\Laptop\Main\Projects\SokobanSolver\DataTypes\obj\Debug\DataTypes.csproj.AssemblyReference.cache
+D:\Laptop\Main\Projects\SokobanSolver\DataTypes\obj\Debug\DataTypes.csproj.CoreCompileInputs.cache
+D:\Laptop\Main\Projects\SokobanSolver\DataTypes\obj\Debug\Sokoban.DataTypes.dll
+D:\Laptop\Main\Projects\SokobanSolver\DataTypes\obj\Debug\Sokoban.DataTypes.pdb
