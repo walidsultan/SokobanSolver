@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SokobanSolverEngine", "SokobnaSolverEngine\SokobanSolverEngine.csproj", "{2652B971-86B5-4DF5-8664-23F9A4948217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sokoban.Desktop.App", "SokobnaSolverEngine\Sokoban.Desktop.App.csproj", "{2652B971-86B5-4DF5-8664-23F9A4948217}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SokobanSolvingLogic", "SokobanSolvingLogic\SokobanSolvingLogic.csproj", "{68AE5DB4-927F-4641-868C-7C667480A323}"
 EndProject
