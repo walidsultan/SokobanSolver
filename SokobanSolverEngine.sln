@@ -2,13 +2,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sokoban.Desktop.App", "SokobnaSolverEngine\Sokoban.Desktop.App.csproj", "{2652B971-86B5-4DF5-8664-23F9A4948217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sokoban.Desktop.App", "SokobnaDesktopApp\Sokoban.Desktop.App.csproj", "{2652B971-86B5-4DF5-8664-23F9A4948217}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SokobanSolvingLogic", "SokobanSolvingLogic\SokobanSolvingLogic.csproj", "{68AE5DB4-927F-4641-868C-7C667480A323}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTypes", "DataTypes\DataTypes.csproj", "{5FBF321E-C2E8-4E80-9E66-A8B4A5527F07}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SokobanSolverWebApiCore", "SokobanSolverWebApiCore\SokobanSolverWebApiCore.csproj", "{CF743E1C-7D2E-4227-BA28-72DCB31A296E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C7949162-44AE-48A6-9894-58A071958C15}"
+	ProjectSection(SolutionItems) = preProject
+		app.yaml = app.yaml
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

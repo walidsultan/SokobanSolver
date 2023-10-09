@@ -33,7 +33,7 @@ namespace SokobnaSolverEngine
             {
                 theMutex = Mutex.OpenExisting("SokokobanMutex");
             }
-            catch (WaitHandleCannotBeOpenedException)
+            catch (System.Threading.WaitHandleCannotBeOpenedException)
             {
                 //cannot open the mutex because it doesn't exist
             }
